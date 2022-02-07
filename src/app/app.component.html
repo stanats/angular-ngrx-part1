@@ -1,0 +1,8 @@
+Theme: {{ theme$ | async }}
+<br />
+Username: {{ username$ | async }}
+<br />
+<button type="button" id="theme-switch" (click)="switchTheme()">
+  Switch Theme
+</button>
+<button type="button" id="user-login" (click)="loginUser()">Login User</button>
