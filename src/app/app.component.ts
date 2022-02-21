@@ -1,13 +1,10 @@
-import { Component } from '@angular/core';
-import {
-  store$,
-  actionStream,
-  switchThemeAction,
-  setUsernameAction,
-  selectUsername,
-  selectAppTheme,
-} from './state';
-import { map, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as ThemeActions from './theme.actions';
+import * as ThemeSelectors from './theme.selectors';
+import * as UserActions from './user.actions';
+import * as UserSelectors from './user.selectors';
 
 @Component({
   selector: 'my-app',
@@ -15,14 +12,16 @@ import { map, Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  theme$: Observable<string> = store$.pipe(map(selectAppTheme));
-  username$: Observable<string> = store$.pipe(map(selectUsername));
+  theme$: Observable<string> = this.store.select(ThemeSelectors.getAppTheme);
+  username$: Observable<string> = this.store.select(UserSelectors.getUserName);
+
+  constructor(private readonly store: Store) {}
 
   switchTheme() {
-    actionStream.next(switchThemeAction());
+    this.store.dispatch(ThemeActions.switchThemeAction());
   }
 
   loginUser() {
-    actionStream.next(setUsernameAction({ username: 'Kalle' }));
+    this.store.dispatch(UserActions.setUsernameAction({ username: 'Kalle' }));
   }
 }
