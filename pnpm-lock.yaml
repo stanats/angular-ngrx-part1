@@ -13,6 +13,7 @@ specifiers:
   '@angular/platform-browser-dynamic': ^13.2.0
   '@angular/router': ^13.2.0
   '@ngrx/store': ^13.0.2
+  '@ngrx/store-devtools': ^13.0.2
   '@types/jasmine': ~3.6.0
   '@types/node': 14.14.33
   codelyzer: ^6.0.0
@@ -23,6 +24,7 @@ specifiers:
   karma-coverage: ~2.0.3
   karma-jasmine: ~4.0.0
   karma-jasmine-html-reporter: ^1.5.0
+  prettier: ^2.5.1
   protractor: ~7.0.0
   rxjs: ^7.5.2
   ts-node: ~8.3.0
@@ -41,6 +43,7 @@ dependencies:
   '@angular/platform-browser-dynamic': 13.2.3_7b6dca1aab50f11c96c60edfaa260f25
   '@angular/router': 13.2.3_9709555ee17fe0edbdb43b526eef742d
   '@ngrx/store': 13.0.2_@angular+core@13.2.3+rxjs@7.5.4
+  '@ngrx/store-devtools': 13.0.2_@ngrx+store@13.0.2+rxjs@7.5.4
   rxjs: 7.5.4
   tslib: 2.3.1
   zone.js: 0.11.4
@@ -59,6 +62,7 @@ devDependencies:
   karma-coverage: 2.0.3
   karma-jasmine: 4.0.1_karma@5.1.1
   karma-jasmine-html-reporter: 1.7.0_91a41d0c4a54d3a38fdc6f78dd676734
+  prettier: 2.5.1
   protractor: 7.0.0
   ts-node: 8.3.0_typescript@4.5.5
   tslint: 6.1.3_typescript@4.5.5
@@ -1669,6 +1673,17 @@ packages:
       '@jridgewell/resolve-uri': 3.0.5
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
+
+  /@ngrx/store-devtools/13.0.2_@ngrx+store@13.0.2+rxjs@7.5.4:
+    resolution: {integrity: sha512-fcQ5A7cv9PONFvqlpFPXHswWjEflJvqrNt6wmywlxMtJDjkgzCHpvRiJqup/FiTosblRERoeZXN0oHW3Er3+rw==}
+    peerDependencies:
+      '@ngrx/store': 13.0.2
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@ngrx/store': 13.0.2_@angular+core@13.2.3+rxjs@7.5.4
+      rxjs: 7.5.4
+      tslib: 2.3.1
+    dev: false
 
   /@ngrx/store/13.0.2_@angular+core@13.2.3+rxjs@7.5.4:
     resolution: {integrity: sha512-F7tsc3oCvKh+62MKiXTrvSeaxR41u4p8bch3BLjz12F37376rMuBnXf+V1thsPTZ6RB6aycAi821EQYVXFCXZg==}
@@ -6164,6 +6179,12 @@ packages:
       nanoid: 3.3.1
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /pretty-bytes/5.6.0:
