@@ -12,6 +12,7 @@ specifiers:
   '@angular/platform-browser': ^13.2.0
   '@angular/platform-browser-dynamic': ^13.2.0
   '@angular/router': ^13.2.0
+  '@ngrx/effects': ^13.0.2
   '@ngrx/store': ^13.0.2
   '@ngrx/store-devtools': ^13.0.2
   '@types/jasmine': ~3.6.0
@@ -42,6 +43,7 @@ dependencies:
   '@angular/platform-browser': 13.2.3_1289af8050395f01ceb724cbe1838e4d
   '@angular/platform-browser-dynamic': 13.2.3_7b6dca1aab50f11c96c60edfaa260f25
   '@angular/router': 13.2.3_9709555ee17fe0edbdb43b526eef742d
+  '@ngrx/effects': 13.0.2_e7979c9f86202498955bad7cf58c4d41
   '@ngrx/store': 13.0.2_@angular+core@13.2.3+rxjs@7.5.4
   '@ngrx/store-devtools': 13.0.2_@ngrx+store@13.0.2+rxjs@7.5.4
   rxjs: 7.5.4
@@ -1673,6 +1675,19 @@ packages:
       '@jridgewell/resolve-uri': 3.0.5
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
+
+  /@ngrx/effects/13.0.2_e7979c9f86202498955bad7cf58c4d41:
+    resolution: {integrity: sha512-7yW/KCxlRatDkdEriSnORlOYX8+1QAWEjPulNmHSPwehkzTQ3fIPfRBQy8xP8bnjwvGxnEZNwQlU4q1KVYOfhg==}
+    peerDependencies:
+      '@angular/core': ^13.0.0
+      '@ngrx/store': 13.0.2
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/core': 13.2.3_rxjs@7.5.4+zone.js@0.11.4
+      '@ngrx/store': 13.0.2_@angular+core@13.2.3+rxjs@7.5.4
+      rxjs: 7.5.4
+      tslib: 2.3.1
+    dev: false
 
   /@ngrx/store-devtools/13.0.2_@ngrx+store@13.0.2+rxjs@7.5.4:
     resolution: {integrity: sha512-fcQ5A7cv9PONFvqlpFPXHswWjEflJvqrNt6wmywlxMtJDjkgzCHpvRiJqup/FiTosblRERoeZXN0oHW3Er3+rw==}

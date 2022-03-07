@@ -4,11 +4,17 @@ import {
   createSelector,
   on,
 } from '@ngrx/store';
-import { setUserAddress, setUsernameAction } from './user.actions';
+import {
+  loginUserFailureAction,
+  loginUserSuccessAction,
+  setUserAddress,
+  setUsernameAction,
+} from './user.actions';
 
 export const FEATURE_USER = 'user';
 
 export interface State {
+  lastError?: string;
   username: string | null;
   email?: string | null;
   address: {
@@ -27,9 +33,13 @@ export const initialState: State = {
 
 export const reducer = createReducer<State>(
   initialState,
-  on(setUsernameAction, (state, action) => ({
+  on(setUsernameAction, loginUserSuccessAction, (state, action) => ({
     ...state,
     username: action.username,
+  })),
+  on(loginUserFailureAction, (state, action) => ({
+    ...state,
+    lastError: action.error,
   })),
   on(setUserAddress, (state, action) => ({
     ...state,

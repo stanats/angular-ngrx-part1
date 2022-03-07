@@ -24,4 +24,8 @@ export class AppComponent {
   loginUser() {
     this.store.dispatch(UserActions.setUsernameAction({ username: 'Kalle' }));
   }
+
+  onLogin(loginInfo: { username: string; password: string }) {
+    this.store.dispatch(UserActions.loginUserAction(loginInfo));
+  }
 }

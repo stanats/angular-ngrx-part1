@@ -5,4 +5,4 @@ Username: {{ username$ | async }}
 <button type="button" id="theme-switch" (click)="switchTheme()">
   Switch Theme
 </button>
-<button type="button" id="user-login" (click)="loginUser()">Login User</button>
+<my-login-form (login)="onLogin($event)"></my-login-form>
