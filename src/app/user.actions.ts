@@ -6,6 +6,6 @@ export const setUsernameAction = createAction(
 );
 
 export const setUserAddress = createAction(
-  '[User] Set Username',
+  '[User] Set Address',
   props<{ city: string; streetName: string }>()
 );
